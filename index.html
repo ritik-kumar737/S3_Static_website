@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="A modern personal portfolio landing page." />
+  <title>Ritik Kumar | Cloud & DevOps</title>
+  <style>
+    :root{color-scheme:dark;--bg:#080c16;--panel:#121827;--text:#eef3ff;--muted:#9caac3;--aqua:#57e1dc;--purple:#a18cff;--line:rgba(255,255,255,.11)}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden}a{color:inherit;text-decoration:none}
+    .glow{position:absolute;z-index:-1;pointer-events:none;filter:blur(90px);border-radius:50%;opacity:.3}.glow.one{width:450px;height:450px;background:#315de8;top:0;right:-140px}.glow.two{width:350px;height:350px;background:#5b31c8;top:350px;left:-180px}
+    .wrap{max-width:1160px;padding:0 25px;margin:auto}header{height:86px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}.logo{font-size:21px;font-weight:800;letter-spacing:-.7px}.logo span{color:var(--aqua)}nav{display:flex;gap:34px;color:#cbd5e7;font-size:14px}nav a:hover{color:var(--aqua)}.contact-link{border:1px solid var(--line);border-radius:12px;padding:12px 20px;font-size:13px;font-weight:700;background:rgba(255,255,255,.04)}
+    .hero{min-height:670px;display:grid;grid-template-columns:1.15fr .85fr;align-items:center;gap:60px;padding:70px 0}.tag{display:inline-flex;align-items:center;gap:9px;border:1px solid rgba(87,225,220,.25);border-radius:100px;background:rgba(87,225,220,.07);padding:10px 15px;color:#a9f7f1;font-size:12px;font-weight:650;letter-spacing:.6px}.dot{width:8px;height:8px;background:#55f1ae;border-radius:50%;box-shadow:0 0 15px #55f1ae}h1{font-size:clamp(48px,6vw,77px);letter-spacing:-3.5px;line-height:1.06;margin:26px 0 23px}h1 .gradient{background:linear-gradient(90deg,#62ebe3,#aaa0ff);-webkit-background-clip:text;background-clip:text;color:transparent}p{color:var(--muted);line-height:1.8}.intro{font-size:17px;max-width:565px}.actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:32px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:15px 22px;border-radius:12px;font-size:14px;font-weight:750;transition:transform .2s,box-shadow .2s}.btn:hover{transform:translateY(-3px)}.primary{background:linear-gradient(110deg,#67e7df,#9d92ff);color:#08111e;box-shadow:0 10px 28px #57e1dc24}.secondary{border:1px solid var(--line);background:#ffffff08}.meta{display:flex;gap:26px;flex-wrap:wrap;margin-top:47px;font-size:13px;color:var(--muted)}.meta strong{display:block;color:white;font-size:20px;margin-bottom:4px}
+    .visual{position:relative;min-width:0}.terminal{border:1px solid #34425f;background:linear-gradient(145deg,#151f33,#0d1322);border-radius:20px;box-shadow:0 45px 100px #0008,0 0 80px #545cfd1c;overflow:hidden;transform:rotate(1.5deg);animation:float 6s ease-in-out infinite}.term-top{padding:17px 20px;border-bottom:1px solid var(--line);display:flex;gap:7px;align-items:center;background:#ffffff07}.circle{height:10px;width:10px;border-radius:50%;background:#ff7171}.circle:nth-child(2){background:#ffd16e}.circle:nth-child(3){background:#59d99b}.term-title{margin:auto;color:#8391ad;font:12px monospace;transform:translateX(-14px)}.term-body{padding:27px 25px 35px;font:14px/2.1 ui-monospace,SFMono-Regular,Consolas,monospace;white-space:normal;overflow-wrap:anywhere}.prompt{color:#6ce7dc}.command{color:#f3f5ff}.success{color:#65e2ac}.dim{color:#8494b4}.highlight{color:#baa8ff}.status{position:absolute;right:-21px;bottom:-28px;background:#1d2939;border:1px solid #3c5067;border-radius:15px;padding:17px 20px;box-shadow:0 20px 30px #0006;font-size:13px}.status b{color:#6de1ba}
+    .section{padding:65px 0 95px}.eyebrow{color:var(--aqua);font-size:12px;letter-spacing:2.5px;font-weight:800}.section h2{font-size:clamp(31px,4vw,44px);letter-spacing:-1.5px;margin:14px 0}.sub{max-width:650px;margin:0 0 38px}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.card{min-width:0;padding:27px;border:1px solid var(--line);background:linear-gradient(140deg,#172036aa,#101624);border-radius:18px;transition:transform .25s,border-color .25s}.card:hover{transform:translateY(-6px);border-color:#67e7df75}.card-icon{height:50px;width:50px;border-radius:14px;display:grid;place-items:center;background:#57e1dc18;font-size:24px;margin-bottom:20px}.card h3{margin:0 0 10px;font-size:19px}.card p{font-size:14px;margin:0}.pill-list{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}.pill{border:1px solid var(--line);border-radius:100px;background:#ffffff05;color:#bac8de;padding:8px 12px;font-size:12px}.cta{margin:15px 0 80px;padding:36px 40px;border-radius:22px;border:1px solid #485477;background:linear-gradient(110deg,#1b2944,#252044);display:flex;align-items:center;justify-content:space-between;gap:25px}.cta h2{font-size:27px;margin:0 0 10px}.cta p{margin:0}footer{border-top:1px solid var(--line);padding:30px 0;color:#8c9ab4;font-size:13px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}@keyframes float{0%,100%{transform:translateY(0) rotate(1.5deg)}50%{transform:translateY(-12px) rotate(1.5deg)}}
+    @media(max-width:900px){.hero{grid-template-columns:1fr;gap:50px;padding:78px 0}.visual{max-width:600px;width:100%;margin:auto}.cards{grid-template-columns:1fr 1fr}.status{right:0}nav{gap:16px}}@media(max-width:600px){header{height:72px}nav{display:none}.contact-link{padding:10px 14px}.wrap{padding:0 19px}h1{letter-spacing:-2px}.intro{font-size:15px}.hero{min-height:auto;padding:65px 0 90px}.term-body{font-size:11px;padding:22px 17px}.cards{grid-template-columns:1fr}.cta{flex-direction:column;align-items:flex-start;padding:27px}.meta{gap:22px}.section{padding-top:35px}.status{right:-4px;bottom:-35px}}
+    @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+  </style>
+</head>
+<body>
+  <div class="glow one"></div><div class="glow two"></div>
+  <div class="wrap">
+    <header>
+      <a class="logo" href="#home">ritik<span>.</span>dev</a>
+      <nav aria-label="Main navigation"><a href="#home">Home</a><a href="#skills">Skills</a><a href="#projects">Projects</a></nav>
+      <a class="contact-link" href="mailto:hello@example.com">Let's Connect ↗</a>
+    </header>
+    <main>
+      <section class="hero" id="home">
+        <div>
+          <span class="tag"><span class="dot"></span> OPEN TO OPPORTUNITIES</span>
+          <h1>Building the<br><span class="gradient">cloud-powered</span><br>future.</h1>
+          <p class="intro">Hi, I'm <strong style="color:white">Ritik Kumar</strong> — a cloud & DevOps enthusiast passionate about Linux, AWS, automation, and making technology work smarter.</p>
+          <div class="actions"><a href="#projects" class="btn primary">Explore My Work <span aria-hidden="true">↗</span></a><a href="#skills" class="btn secondary">Discover My Skills ↓</a></div>
+          <div class="meta"><div><strong>AWS</strong>Cloud</div><div><strong>Linux</strong>Operations</div><div><strong>Bash</strong>Automation</div></div>
+        </div>
+        <div class="visual" aria-label="Illustration of a cloud server terminal">
+          <div class="terminal"><div class="term-top"><i class="circle"></i><i class="circle"></i><i class="circle"></i><span class="term-title">cloud-ops — bash</span></div>
+            <div class="term-body"><div><span class="prompt">ritik@cloud</span><span class="dim">:~$</span> <span class="command">whoami</span></div><div class="success">Ritik Kumar | DevOps Enthusiast</div><br><div><span class="prompt">ritik@cloud</span><span class="dim">:~$</span> <span class="command">cat skills.txt</span></div><div class="highlight">AWS • Linux • Networking</div><div class="highlight">Bash • Git • Web Deployment</div><br><div><span class="prompt">ritik@cloud</span><span class="dim">:~$</span> <span class="command">./deploy.sh</span></div><div class="dim">→ Connecting to cloud...</div><div class="dim">→ Building infrastructure...</div><div class="success">✓ Deployment successful!</div><div><span class="prompt">ritik@cloud</span><span class="dim">:~$</span> <span class="command">▌</span></div></div>
+          </div><div class="status"><span class="dot" style="display:inline-block;margin-right:7px"></span><b>All systems operational</b><div class="dim" style="margin-top:6px">● Cloud infrastructure ready</div></div>
+        </div>
+      </section>
+      <section class="section" id="skills"><div class="eyebrow">WHAT I WORK WITH</div><h2>Skills & technologies</h2><p class="sub">The tools I use to deploy websites, manage cloud services, and automate everyday tasks.</p><div class="cards">
+        <article class="card"><div class="card-icon">☁️</div><h3>AWS Cloud</h3><p>Working with EC2, S3, CloudFront, Route 53, IAM, and VPC networking.</p><div class="pill-list"><span class="pill">EC2</span><span class="pill">S3</span><span class="pill">Route 53</span></div></article>
+        <article class="card"><div class="card-icon">⌘</div><h3>Linux & Automation</h3><p>Managing Linux servers, shell commands, services, and Bash automation scripts.</p><div class="pill-list"><span class="pill">Ubuntu</span><span class="pill">Bash</span><span class="pill">Nginx</span></div></article>
+        <article class="card"><div class="card-icon">⚡</div><h3>Web & Deployment</h3><p>Building and deploying web applications with modern tools and version control.</p><div class="pill-list"><span class="pill">Git</span><span class="pill">React</span><span class="pill">Next.js</span></div></article>
+      </div></section>
+      <section class="section" id="projects"><div class="eyebrow">SELECTED WORK</div><h2>Things I've built</h2><p class="sub">Hands-on projects that helped me learn cloud infrastructure and automation.</p><div class="cards">
+        <article class="card"><div class="card-icon">🌐</div><h3>Cloud Portfolio Hosting</h3><p>Static website deployment using Amazon S3, CloudFront, Route 53, and HTTPS.</p><div class="pill-list"><span class="pill">AWS</span><span class="pill">CDN</span><span class="pill">DNS</span></div></article>
+        <article class="card"><div class="card-icon">📊</div><h3>Server Health Checker</h3><p>Bash script for checking disk usage, memory consumption, and Linux services.</p><div class="pill-list"><span class="pill">Linux</span><span class="pill">Shell Script</span></div></article>
+        <article class="card"><div class="card-icon">🗂️</div><h3>File Backup Tool</h3><p>Reusable shell script that verifies directories and copies files for backups.</p><div class="pill-list"><span class="pill">Bash</span><span class="pill">Automation</span></div></article>
+      </div></section>
+      <section class="cta"><div><h2>Let's build something great.</h2><p>Interested in cloud, DevOps, or collaboration? I'd love to connect.</p></div><a class="btn primary" href="mailto:hello@example.com">Say Hello ↗</a></section>
+    </main>
+    <footer><span>© <span id="year">2026</span> Ritik Kumar. Built with HTML & CSS.</span><span>Made with curiosity and ☕</span></footer>
+  </div>
+  <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+</body>
+</html>
